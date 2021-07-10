@@ -120,7 +120,7 @@ g.savefig("charts/stationnary_points_transition.png")
 
 ############################################################################# Feigenbaum tree
 # Tips for generating more sample at the end
-mu_value = (maxv+1-np.logspace(0, 2, num=800, base=2))[::-1]
+mu_value = (maxv+1-np.logspace(0, 2, num=2000, base=2))[::-1]
 # reduce Float precision
 mu_value = (1000 * mu_value).round() / 1000
 
@@ -135,8 +135,8 @@ data = pd.concat(series)
 
 
 
-
-g = sns.relplot(data=data, x="mu", y="well",palette= myc, hue="n", s=1)
-g.fig.set_size_inches(30, 30*9/16)
+# HD for zooming 
+g = sns.relplot(data=data, x="mu", y="well",palette= myc, hue="n", s=35)
+g.fig.set_size_inches(8*30,8*30*9/16)
 g.savefig("charts/feigenbaum.png")
 
