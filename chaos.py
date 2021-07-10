@@ -137,5 +137,6 @@ data = pd.concat(series)
 
 
 g = sns.relplot(data=data, x="mu", y="well",palette= myc, hue="n", s=1)
+g.fig.set_size_inches(30, 30*9/16)
 g.savefig("charts/feigenbaum.png")
 
